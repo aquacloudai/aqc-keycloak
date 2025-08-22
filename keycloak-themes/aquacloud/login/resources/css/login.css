@@ -224,6 +224,310 @@ input[type="submit"] {
     display: none !important;
 }
 
+/* OTP/TOTP Specific Styles */
+.otp-form-group {
+    text-align: center;
+}
+
+.otp-label,
+.totp-verify-label,
+.reset-label,
+.password-label,
+.device-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+    text-align: left;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.otp-input,
+.totp-verify-input {
+    font-size: 24px;
+    letter-spacing: 8px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+}
+
+.otp-help-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.device-input {
+    font-size: 16px;
+}
+
+/* TOTP Setup Styles */
+.totp-setup-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.setup-steps {
+    margin-bottom: 30px;
+}
+
+.setup-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background-color: #5ec4cd;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 16px;
+    margin-top: 4px;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.step-content p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.qr-code-container {
+    text-align: center;
+    margin: 16px 0;
+}
+
+.qr-code {
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    background: white;
+}
+
+.manual-key-container {
+    margin-top: 16px;
+}
+
+.manual-key-label {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.manual-key {
+    display: flex;
+    align-items: center;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.manual-key code {
+    flex: 1;
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: 14px;
+    color: #1a1a1a;
+}
+
+.copy-key-btn {
+    margin-left: 12px;
+    padding: 6px 12px;
+    background-color: #5ec4cd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.copy-key-btn:hover {
+    background-color: #4db8c2;
+}
+
+.copy-key-btn.copied {
+    background-color: #10b981;
+}
+
+/* Password Requirements */
+.password-requirements {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.password-requirements h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 12px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.password-requirements ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.password-requirements li {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Back to Login Link */
+.back-to-login {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.back-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.back-link:hover {
+    color: #374151;
+    text-decoration: underline;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    width: 100%;
+    padding: 14px 24px;
+    background-color: #f9fafb;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    margin-top: 12px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.btn-secondary:hover {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+/* Error Page Styles */
+.error-container {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.error-icon {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.error-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 16px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.error-message {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 32px;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.error-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Alert Wrapper for Template */
+.alert-wrapper {
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+}
+
+.alert-warning {
+    background-color: #fef3c7;
+    border: 1px solid #fde68a;
+    color: #92400e;
+}
+
+.alert-info {
+    background-color: #dbeafe;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+}
+
 /* Mobile Responsive */
 @media (max-width: 480px) {
     .login-pf-page {
@@ -245,4 +549,193 @@ input[type="submit"] {
     .aquacloud-logo {
         width: 150px;
     }
+
+    .setup-step {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .step-number {
+        margin: 0 auto 12px auto;
+    }
+
+    .step-content {
+        text-align: center;
+    }
+
+    .qr-code {
+        max-width: 180px;
+    }
+
+    .manual-key {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .copy-key-btn {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    .error-actions {
+        max-width: 100%;
+    }
+}
+
+/* Email Verification Styles */
+.verify-email-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.verify-icon {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.verify-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 16px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.verify-message {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 32px;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.verify-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.resend-container {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.resend-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.resend-link {
+    background: none;
+    border: none;
+    color: #5ec4cd;
+    text-decoration: underline;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.resend-link:hover {
+    color: #4db8c2;
+}
+
+/* Recovery Code Styles */
+.recovery-setup-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.recovery-info {
+    margin-bottom: 30px;
+}
+
+.info-box {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+}
+
+.info-box h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.info-box ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.info-box li {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.recovery-form-group {
+    text-align: center;
+}
+
+.recovery-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+    text-align: left;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.recovery-input {
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.recovery-help-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 8px;
+    text-align: center;
+    line-height: 1.4;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.auth-alternatives {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.alternative-methods p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.alt-method-link {
+    color: #5ec4cd;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.alt-method-link:hover {
+    color: #4db8c2;
+    text-decoration: underline;
 }
