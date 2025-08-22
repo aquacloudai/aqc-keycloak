@@ -1,0 +1,248 @@
+/* Aquacloud Login Page Specific Styles */
+
+/* Hide all Keycloak default elements */
+#kc-header,
+#kc-header-wrapper,
+.pf-c-page__header,
+.pf-c-login__header,
+.pf-c-login__main-header,
+#kc-page-title,
+#kc-content #kc-content-wrapper>h1,
+.pf-c-title,
+#kc-locale,
+#kc-locale-wrapper {
+    display: none !important;
+}
+
+/* Main container */
+.login-pf {
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.login-pf body {
+    background: #ffffff !important;
+    margin: 0;
+    padding: 0;
+}
+
+.login-pf-page {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#kc-content {
+    width: 100%;
+}
+
+#kc-content-wrapper {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    border: none;
+}
+
+/* Login container */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Logo Container */
+.aquacloud-logo-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.aquacloud-logo {
+    width: 180px;
+    height: auto;
+    display: inline-block;
+}
+
+/* Welcome Text */
+.welcome-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: center;
+    margin: 0 0 8px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.welcome-subtitle {
+    font-size: 18px;
+    color: #6b7280;
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Form Styling */
+#kc-form-login {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-control,
+#username,
+#password {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9fafb;
+    color: #1a1a1a;
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.form-control::placeholder,
+#username::placeholder,
+#password::placeholder {
+    color: #9ca3af;
+}
+
+.form-control:focus,
+#username:focus,
+#password:focus {
+    border-color: #5ec4cd;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(94, 196, 205, 0.1);
+}
+
+/* Submit Button */
+#kc-form-buttons {
+    margin-top: 24px;
+    width: 100%;
+}
+
+.btn-primary,
+#kc-login,
+input[type="submit"] {
+    width: 100%;
+    padding: 14px 24px;
+    background-color: #5ec4cd;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.btn-primary:hover,
+#kc-login:hover {
+    background-color: #4db8c2;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(94, 196, 205, 0.3);
+}
+
+.btn-primary:active,
+#kc-login:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled,
+#kc-login:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Reset Password Section */
+.reset-password-container {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.help-text {
+    color: #6b7280;
+    margin-right: 4px;
+}
+
+.reset-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.reset-link:hover {
+    text-decoration: underline;
+}
+
+/* Error Messages */
+.alert {
+    margin-bottom: 20px;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Hide any default form options */
+#kc-form-options,
+#kc-registration,
+#kc-info,
+.checkbox {
+    display: none !important;
+}
+
+/* Ensure no default styles interfere */
+.pf-c-form__group {
+    margin: 0;
+    padding: 0;
+}
+
+.pf-c-form__label {
+    display: none !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .login-pf-page {
+        padding: 20px 16px;
+    }
+
+    .login-container {
+        max-width: 100%;
+    }
+
+    .welcome-title {
+        font-size: 28px;
+    }
+
+    .welcome-subtitle {
+        font-size: 16px;
+    }
+
+    .aquacloud-logo {
+        width: 150px;
+    }
+}

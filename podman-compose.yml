@@ -1,0 +1,49 @@
+# podman-compose.yml
+version: '3.8'
+
+services:
+  postgres:
+    image: docker.io/postgres:15
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data:Z
+    # Podman-specific: explicit user mapping
+    userns_mode: keep-id
+    security_opt:
+      - label=disable
+
+  keycloak:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: keycloak-custom:latest
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: password
+      KC_HOSTNAME_STRICT: 'false'
+      KC_HTTP_ENABLED: 'true'
+      KC_PROXY: edge
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      # Development - disable caching
+      KC_SPI_THEME_CACHE_THEMES: 'false'
+      KC_SPI_THEME_CACHE_TEMPLATES: 'false'
+      KC_SPI_THEME_STATIC_MAX_AGE: '-1'
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    command: ["start-dev", "--verbose"]
+    # Podman-specific settings
+    userns_mode: keep-id
+    security_opt:
+      - label=disable
+
+volumes:
+  postgres_data:
+    driver: local

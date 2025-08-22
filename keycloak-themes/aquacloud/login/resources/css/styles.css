@@ -1,0 +1,162 @@
+/* Aquacloud Theme - Override Keycloak Defaults */
+
+/* Reset all Keycloak styling */
+* {
+    box-sizing: border-box;
+}
+
+/* Remove ALL Keycloak default backgrounds and styles */
+body,
+.login-pf,
+.login-pf-page,
+.pf-c-page,
+.pf-c-page__main,
+.pf-c-login,
+.pf-c-login__container,
+.pf-c-login__main {
+    background: #ffffff !important;
+    background-image: none !important;
+    min-height: 100vh;
+}
+
+/* Remove any PatternFly card styling */
+.pf-c-card,
+.pf-l-bullseye,
+.pf-l-stack {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Hide ALL Keycloak UI elements we don't want */
+#kc-header,
+#kc-header-wrapper,
+#kc-locale,
+#kc-locale-wrapper,
+#kc-locale-dropdown,
+.pf-c-page__header,
+.pf-c-page__header-brand,
+.pf-c-page__header-brand-link,
+.pf-c-brand,
+.pf-c-login__header,
+.pf-c-login__main-header,
+.pf-c-login__main-header-desc,
+.pf-c-title,
+h1.pf-c-title,
+#kc-page-title,
+.kc-feedback-text,
+#kc-info,
+#kc-info-wrapper,
+#kc-attempted-username,
+#kc-form-options,
+.checkbox,
+label[for="rememberMe"] {
+    display: none !important;
+}
+
+/* Remove any ::before or ::after content */
+#kc-content-wrapper::before,
+#kc-content-wrapper::after,
+.login-pf-page::before,
+.login-pf-page::after,
+*::before,
+*::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Ensure form wrapper has no styling */
+#kc-form-wrapper {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+}
+
+/* Remove all padding/margins from containers */
+#kc-content,
+#kc-content-wrapper,
+.pf-c-login__main-body,
+.pf-c-login__main-footer {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    max-width: none !important;
+}
+
+/* Ensure labels are hidden */
+label,
+.pf-c-form__label,
+.pf-c-form__label-text {
+    display: none !important;
+}
+
+/* Remove any list styling for social providers */
+#kc-social-providers ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Ensure PatternFly form groups don't add spacing */
+.pf-c-form__group {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove any default button styling that might interfere */
+.pf-c-button {
+    font-family: inherit;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+/* Ensure no default link styling interferes */
+a {
+    text-decoration: none;
+}
+
+/* Remove any grid or flexbox layouts from PatternFly */
+.pf-l-grid,
+.pf-l-flex,
+.pf-l-stack__item {
+    display: block !important;
+}
+
+/* Ensure the page is truly centered */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Override any media queries that might interfere */
+@media screen and (min-width: 768px) {
+    .pf-c-login__container {
+        max-width: none !important;
+        grid-template-columns: none !important;
+    }
+}
+
+/* Ensure no shadows or borders appear */
+* {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* Keep only necessary borders (form inputs) */
+input.form-control,
+#username,
+#password {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+input.form-control:focus,
+#username:focus,
+#password:focus {
+    box-shadow: 0 0 0 3px rgba(94, 196, 205, 0.1) !important;
+}
