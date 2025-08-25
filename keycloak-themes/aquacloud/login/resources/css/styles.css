@@ -14,9 +14,10 @@ body,
 .pf-c-login,
 .pf-c-login__container,
 .pf-c-login__main {
-    background: #ffffff !important;
+    background: var(--aq-background) !important;
     background-image: none !important;
     min-height: 100vh;
+    transition: background-color 0.3s ease;
 }
 
 /* Remove any PatternFly card styling */
@@ -152,11 +153,16 @@ input.form-control,
 #username,
 #password {
     box-shadow: none !important;
-    border: 1px solid #e5e7eb !important;
+    border: 1px solid var(--aq-border) !important;
+    background-color: var(--aq-input-bg) !important;
+    color: var(--aq-text-primary) !important;
+    transition: all 0.3s ease !important;
 }
 
 input.form-control:focus,
 #username:focus,
 #password:focus {
-    box-shadow: 0 0 0 3px rgba(94, 196, 205, 0.1) !important;
+    box-shadow: 0 0 0 3px rgba(144, 208, 215, 0.2) !important;
+    border-color: var(--aq-accent) !important;
+    background-color: var(--aq-surface) !important;
 }

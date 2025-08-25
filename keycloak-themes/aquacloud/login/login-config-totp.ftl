@@ -15,6 +15,13 @@
                 </div>
             </#if>
             
+            <#-- Debug: Check if totp object is available -->
+            <#if !totp??>
+                <div class="alert alert-error">
+                    <span>TOTP configuration object is not available. Please try refreshing the page or contact support.</span>
+                </div>
+            </#if>
+            
             <div class="totp-setup-container">
                 <div class="setup-steps">
                     <div class="setup-step">
@@ -30,15 +37,25 @@
                         <div class="step-content">
                             <h3>Scan the QR code</h3>
                             <div class="qr-code-container">
-                                <img src="${totp.qrUrl}" alt="QR Code for TOTP setup" class="qr-code">
+                                <#if totp?? && totp.totpSecretQrCode??>
+                                    <img id="kc-totp-secret-qr-code" src="data:image/png;base64,${totp.totpSecretQrCode}" alt="QR Code for TOTP setup" class="qr-code">
+                                <#else>
+                                    <div class="qr-code-placeholder">
+                                        <p>QR Code not available. Please use the manual entry key below.</p>
+                                    </div>
+                                </#if>
                             </div>
                             <div class="manual-key-container">
                                 <p class="manual-key-label">Can't scan? Enter this key manually:</p>
                                 <div class="manual-key">
-                                    <code>${totp.manualEntryKey}</code>
-                                    <button type="button" class="copy-key-btn" onclick="copyToClipboard('${totp.manualEntryKey}')">
-                                        Copy
-                                    </button>
+                                    <#if totp?? && totp.totpSecretEncoded??>
+                                        <code>${totp.totpSecretEncoded}</code>
+                                        <button type="button" class="copy-key-btn" onclick="copyToClipboard('${totp.totpSecretEncoded}')">
+                                            Copy
+                                        </button>
+                                    <#else>
+                                        <code>Manual key not available</code>
+                                    </#if>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +71,9 @@
                 </div>
                 
                 <form action="${url.loginAction}" class="${properties.kcFormClass!}" id="kc-totp-settings-form" method="post">
-                    <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />
+                    <#if totp?? && totp.totpSecret??>
+                        <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />
+                    </#if>
                     
                     <div class="form-group">
                         <label for="totp" class="totp-verify-label">Verification Code</label>
@@ -77,7 +96,7 @@
                                name="userLabel" 
                                class="form-control device-input"
                                placeholder="My Phone"
-                               value="${totp.otpCredentialName}" />
+                               value="${totp.otpCredentialName!''}" />
                     </div>
 
                     <div id="kc-form-buttons">

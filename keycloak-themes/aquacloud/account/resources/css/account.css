@@ -1,436 +1,324 @@
-/* Aquacloud Account Theme v3 - Light Theme Override */
+/* Aquacloud Account Theme - Matching Login Theme Styling */
 
+/* CSS Custom Properties for Theme Colors */
 :root {
-    /* Override Keycloak v3 dark theme colors */
-    --pf-v5-global--BackgroundColor--100: #ffffff !important;
-    --pf-v5-global--BackgroundColor--150: #f9fafb !important;
-    --pf-v5-global--BackgroundColor--200: #f3f4f6 !important;
-    --pf-v5-global--BackgroundColor--dark-100: #ffffff !important;
-    --pf-v5-global--BackgroundColor--dark-200: #f9fafb !important;
-    --pf-v5-global--BackgroundColor--dark-300: #f3f4f6 !important;
-
-    /* Text colors */
-    --pf-v5-global--Color--100: #081a26 !important;
-    --pf-v5-global--Color--200: #4b5563 !important;
-    --pf-v5-global--Color--300: #6b7280 !important;
-    --pf-v5-global--Color--dark-100: #081a26 !important;
-    --pf-v5-global--Color--dark-200: #1f2937 !important;
-
-    /* Primary colors - AquaCloud palette */
-    --pf-v5-global--primary-color--100: #5ec4cd !important;
-    --pf-v5-global--primary-color--200: #014059 !important;
-    --pf-v5-global--active-color--100: #5ec4cd !important;
-    --pf-v5-global--active-color--200: #014059 !important;
-
-    /* Link colors */
-    --pf-v5-global--link--Color: #014059 !important;
-    --pf-v5-global--link--Color--hover: #5ec4cd !important;
-    --pf-v5-global--link--Color--dark: #014059 !important;
-
-    /* Border colors */
-    --pf-v5-global--BorderColor--100: #e5e7eb !important;
-    --pf-v5-global--BorderColor--200: #d1d5db !important;
-    --pf-v5-global--BorderColor--dark-100: #e5e7eb !important;
-
-    /* Component specific */
-    --pf-v5-c-page--BackgroundColor: #f9fafb !important;
-    --pf-v5-c-page__sidebar--BackgroundColor: #ffffff !important;
-    --pf-v5-c-page__main--BackgroundColor: #f9fafb !important;
-    --pf-v5-c-card--BackgroundColor: #ffffff !important;
-    --pf-v5-c-form-control--BackgroundColor: #ffffff !important;
-    --pf-v5-c-button--m-primary--BackgroundColor: #5ec4cd !important;
-    --pf-v5-c-button--m-primary--hover--BackgroundColor: #4db8c2 !important;
+    /* Light Mode (default) */
+    --aq-primary: #081a26;        /* Dark blue - primary text */
+    --aq-secondary: #014059;      /* Medium blue - secondary elements */
+    --aq-accent: #90d0d7;         /* Light blue - accent/brand color */
+    --aq-background: #ffffff;     /* White - main background */
+    --aq-surface: #ffffff;        /* White - card/surface background */
+    --aq-text-primary: #081a26;   /* Dark blue - primary text */
+    --aq-text-secondary: #014059; /* Medium blue - secondary text */
+    --aq-text-muted: #6b7280;     /* Gray - muted text */
+    --aq-border: #e5e7eb;         /* Light gray - borders */
+    --aq-input-bg: #f9fafb;       /* Very light gray - input background */
+    --aq-error: #dc2626;          /* Red - error states */
+    --aq-success: #065f46;        /* Green - success states */
+    --aq-warning: #92400e;        /* Orange - warning states */
+    
+    /* Override PatternFly variables */
+    --pf-global--BackgroundColor--dark-100: var(--aq-background) !important;
+    --pf-global--BackgroundColor--dark-200: var(--aq-input-bg) !important;
+    --pf-global--BackgroundColor--dark-300: var(--aq-border) !important;
+    --pf-v5-global--BackgroundColor--dark-100: var(--aq-background) !important;
+    --pf-v5-global--BackgroundColor--dark-200: var(--aq-input-bg) !important;
+    --pf-v5-global--BackgroundColor--dark-300: var(--aq-border) !important;
+    --pf-c-form-control--BackgroundColor: var(--aq-background) !important;
+    --pf-v5-c-form-control--BackgroundColor: var(--aq-background) !important;
+    --pf-c-text-input-group--BackgroundColor: var(--aq-background) !important;
+    --pf-v5-c-text-input-group--BackgroundColor: var(--aq-background) !important;
+    --pf-c-text-input-group__text-input--BackgroundColor: var(--aq-background) !important;
+    --pf-v5-c-text-input-group__text-input--BackgroundColor: var(--aq-background) !important;
+    --pf-v5-global--primary-color--100: var(--aq-accent) !important;
+    --pf-v5-global--primary-color--200: var(--aq-secondary) !important;
 }
 
-/* Force light theme globally */
-.pf-v5-theme-dark {
-    color-scheme: light !important;
-}
-
-body,
-.pf-v5-c-page {
-    background-color: #f9fafb !important;
-    color: #081a26 !important;
-}
-
-/* Page header */
-.pf-v5-c-page__header {
-    background-color: #ffffff !important;
-    border-bottom: 1px solid #e5e7eb !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
-}
-
-.pf-v5-c-page__header-brand {
+/* Global reset and body styling */
+* {
+    background: transparent !important;
     background-color: transparent !important;
 }
 
-/* Logo/Brand */
-.pf-v5-c-masthead__brand {
-    background: url('../img/logo_white.webp') no-repeat center !important;
-    background-size: contain !important;
-    width: 150px !important;
-    height: 40px !important;
-    display: block !important;
-    overflow: hidden !important;
+html,
+body {
+    background-color: var(--aq-background) !important;
+    background: var(--aq-background) !important;
+    color: var(--aq-text-primary) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 
-.pf-v5-c-masthead__brand img {
-    width: 1px !important;
-    height: 1px !important;
-    opacity: 0 !important;
-    position: absolute !important;
-    left: -9999px !important;
+/* STEP 4: Target EVERY possible input with maximum specificity */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+.pf-c-form-control,
+.pf-v5-c-form-control,
+.pf-c-text-input-group__text-input,
+.pf-v5-c-text-input-group__text-input,
+.pf-c-text-input-group input,
+.pf-v5-c-text-input-group input,
+[class*="FormControl"] input,
+[class*="form-control"] input,
+[class*="TextInput"] input,
+[class*="text-input"] input,
+[data-testid*="input"],
+[data-testid*="password"],
+[data-testid*="authenticator"],
+div[class*="pf-"] input,
+div[class*="FormControl"],
+div[class*="TextInput"],
+#password,
+#totp,
+#otp,
+#code,
+[name="password"],
+[name="totp"],
+[name="otp"],
+[name="code"],
+[autocomplete="current-password"],
+[autocomplete="new-password"],
+[autocomplete="one-time-code"] {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #081a26 !important;
+    border: 1px solid #e5e7eb !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #081a26 !important;
+    -webkit-background-clip: padding-box !important;
 }
 
+/* STEP 5: Target containers that might be creating the black box */
+.pf-c-text-input-group,
+.pf-v5-c-text-input-group,
+.pf-c-text-input-group__main,
+.pf-v5-c-text-input-group__main,
+.pf-c-text-input-group__text,
+.pf-v5-c-text-input-group__text,
+.pf-c-input-group,
+.pf-v5-c-input-group,
+[class*="text-input-group"],
+[class*="TextInputGroup"],
+[class*="input-group"],
+[class*="InputGroup"],
+div:has(> input[type="password"]),
+div:has(> input[type="text"]),
+fieldset,
+.pf-c-form__group,
+.pf-v5-c-form__group {
+    background-color: transparent !important;
+    background: transparent !important;
+}
 
-/* Hide default Keycloak branding */
-.pf-v5-c-brand img,
-.pf-v5-c-brand svg,
-.pf-v5-c-brand::before,
-.pf-v5-c-brand picture {
+/* STEP 6: Use pseudo-elements to force white background */
+input::before,
+input::after {
+    content: none !important;
     display: none !important;
 }
 
-/* Ensure clickable area */
-.pf-v5-c-page__header-brand-link {
-    display: block;
-    width: 150px;
-    height: 40px;
-}
-
-/* Sidebar */
-.pf-v5-c-page__sidebar {
+/* STEP 7: Override with attribute selectors */
+[style*="background-color: rgb(0"],
+[style*="background-color: #0"],
+[style*="background: rgb(0"],
+[style*="background: #0"],
+[style*="backgroundColor"] {
     background-color: #ffffff !important;
-    border-right: 1px solid #e5e7eb !important;
+    background: #ffffff !important;
 }
 
-.pf-v5-c-page__sidebar-body {
+/* STEP 8: Use animation to constantly force the background */
+@keyframes forceWhiteBackground {
+    from, to {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+        color: #081a26 !important;
+    }
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+    animation: forceWhiteBackground 0.001s infinite !important;
+}
+
+/* STEP 9: Override focus states */
+input:focus,
+textarea:focus,
+select:focus,
+input:hover,
+textarea:hover,
+select:hover,
+input:active,
+textarea:active,
+select:active {
     background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #081a26 !important;
+    border-color: #90d0d7 !important;
 }
 
-/* Navigation */
+/* Page styling with Aquacloud theme */
+.pf-c-page,
+.pf-v5-c-page {
+    background-color: var(--aq-background) !important;
+    color: var(--aq-text-primary) !important;
+}
+
+.pf-c-page__header,
+.pf-v5-c-page__header,
+.pf-c-masthead,
+.pf-v5-c-masthead,
+.pf-c-masthead__main,
+.pf-v5-c-masthead__main,
+.pf-c-masthead__content,
+.pf-v5-c-masthead__content {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border-bottom: 2px solid var(--aq-accent) !important;
+    box-shadow: 0 2px 8px rgba(144, 208, 215, 0.1) !important;
+}
+
+.pf-c-page__sidebar,
+.pf-v5-c-page__sidebar,
+.pf-c-page__sidebar-body,
+.pf-v5-c-page__sidebar-body,
+.pf-c-nav,
 .pf-v5-c-nav {
-    background-color: transparent !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border-right: 1px solid var(--aq-border) !important;
 }
 
-.pf-v5-c-nav__list {
-    background-color: transparent !important;
-}
-
-.pf-v5-c-nav__link {
-    color: #6b7280 !important;
-    background-color: transparent !important;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.pf-v5-c-nav__link:hover {
-    color: #014059 !important;
-    background-color: #f9fafb !important;
-    text-decoration: none;
-}
-
-.pf-v5-c-nav__link[aria-current="page"],
-.pf-v5-c-nav__link.pf-m-current {
-    color: #014059 !important;
-    background-color: #f0fafa !important;
-    border-left: 3px solid #5ec4cd !important;
-}
-
-/* Main content */
-.pf-v5-c-page__main {
-    background-color: #f9fafb !important;
-}
-
+.pf-c-page__main,
+.pf-v5-c-page__main,
+.pf-c-page__main-section,
 .pf-v5-c-page__main-section {
-    background-color: #f9fafb !important;
+    background-color: var(--aq-background) !important;
 }
 
-.pf-v5-c-page__main-body {
-    background-color: #f9fafb !important;
-}
-
-/* Cards */
+/* Cards with Aquacloud styling */
+.pf-c-card,
 .pf-v5-c-card {
-    background-color: #ffffff !important;
-    border: 1px solid #e5e7eb !important;
-    border-radius: 8px !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    background-color: var(--aq-surface) !important;
+    border: 1px solid var(--aq-border) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 4px 12px rgba(144, 208, 215, 0.1) !important;
+    transition: all 0.3s ease !important;
 }
 
-.pf-v5-c-card__header {
+.pf-c-card:hover,
+.pf-v5-c-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(144, 208, 215, 0.15) !important;
+}
+
+/* Navigation with Aquacloud styling */
+.pf-c-nav__link,
+.pf-v5-c-nav__link {
+    color: var(--aq-text-secondary) !important;
     background-color: transparent !important;
-    border-bottom: 1px solid #e5e7eb !important;
+    transition: all 0.3s ease !important;
 }
 
-.pf-v5-c-card__title {
-    color: #014059 !important;
-    font-weight: 600;
+.pf-c-nav__link:hover,
+.pf-v5-c-nav__link:hover {
+    color: var(--aq-accent) !important;
+    background-color: var(--aq-input-bg) !important;
 }
 
-.pf-v5-c-card__body {
-    background-color: transparent !important;
+.pf-c-nav__link[aria-current="page"],
+.pf-v5-c-nav__link[aria-current="page"],
+.pf-c-nav__link.pf-m-current,
+.pf-v5-c-nav__link.pf-m-current {
+    background-color: var(--aq-accent) !important;
+    color: var(--aq-primary) !important;
+    border-left: 4px solid var(--aq-secondary) !important;
 }
 
-/* Forms */
-.pf-v5-c-form {
-    background-color: transparent !important;
-}
-
-.pf-v5-c-form__group {
-    background-color: transparent !important;
-}
-
-.pf-v5-c-form__label {
-    color: #081a26 !important;
-    font-weight: 500;
-}
-
-.pf-v5-c-form__label-text {
-    color: #081a26 !important;
-}
-
-.pf-v5-c-form-control {
-    background-color: #ffffff !important;
-    border: 1px solid #e5e7eb !important;
-    color: #081a26 !important;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-}
-
-.pf-v5-c-form-control:focus {
-    background-color: #ffffff !important;
-    border-color: #5ec4cd !important;
-    box-shadow: 0 0 0 3px rgba(94, 196, 205, 0.1) !important;
-}
-
-.pf-v5-c-form-control::placeholder {
-    color: #9ca3af !important;
-}
-
-/* Text inputs and textareas */
-input.pf-v5-c-form-control,
-textarea.pf-v5-c-form-control,
-select.pf-v5-c-form-control {
-    background-color: #ffffff !important;
-    color: #081a26 !important;
-}
-
-/* Buttons */
-.pf-v5-c-button {
-    font-weight: 600;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-}
-
+/* Buttons with Aquacloud solid color styling */
+.pf-c-button.pf-m-primary,
 .pf-v5-c-button.pf-m-primary {
-    background-color: #5ec4cd !important;
-    color: #ffffff !important;
+    background-color: var(--aq-primary) !important;
+    background: var(--aq-primary) !important;
     border: none !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    transition: background-color 0.2s ease !important;
+    border-radius: 0 !important;
 }
 
+.pf-c-button.pf-m-primary:hover,
 .pf-v5-c-button.pf-m-primary:hover {
-    background-color: #4db8c2 !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(94, 196, 205, 0.3) !important;
+    background-color: var(--aq-secondary) !important;
+    background: var(--aq-secondary) !important;
+    color: #ffffff !important;
 }
 
-.pf-v5-c-button.pf-m-secondary {
-    background-color: transparent !important;
-    color: #014059 !important;
-    border: 1px solid #e5e7eb !important;
+/* Typography */
+h1, h2, h3, h4, h5, h6, p, span, div, label {
+    color: var(--aq-text-primary) !important;
 }
 
-.pf-v5-c-button.pf-m-secondary:hover {
-    background-color: #f9fafb !important;
-    border-color: #5ec4cd !important;
+/* Custom Aquacloud Logo - Replace Keycloak logo */
+.pf-c-brand,
+.pf-v5-c-brand,
+.pf-c-page__header-brand img,
+.pf-v5-c-page__header-brand img,
+.pf-c-masthead__brand img,
+.pf-v5-c-masthead__brand img,
+img[alt="Keycloak logo"],
+img[alt="Logo"],
+img[src*="keycloak-logo"] {
+    content: url("../img/logo.png") !important;
+    height: 50px !important;
+    width: auto !important;
+    max-height: 50px !important;
 }
 
-.pf-v5-c-button.pf-m-link {
-    color: #014059 !important;
+/* STEP 11: Last resort - use filter to invert black to white */
+input[style*="background-color: rgb(0, 0, 0)"],
+input[style*="background: rgb(0, 0, 0)"],
+div[style*="background-color: rgb(0, 0, 0)"],
+div[style*="background: rgb(0, 0, 0)"] {
+    filter: invert(1) !important;
 }
 
-.pf-v5-c-button.pf-m-link:hover {
-    color: #5ec4cd !important;
+/* STEP 12: Inject style fix using content property */
+body::after {
+    content: "";
+    display: none;
+    background: url('data:text/css;base64,aW5wdXQsIHRleHRhcmVhLCBzZWxlY3QgeyBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmICFpbXBvcnRhbnQ7IH0=');
 }
 
-.pf-v5-c-menu-toggle {
-    background-color: #ffffff !important;
-    color: #014059 !important;
-    border: 1px solid transparent !important;
-}
-
-/* Tabs */
-.pf-v5-c-tabs {
-    background-color: transparent !important;
-}
-
-.pf-v5-c-tabs__link {
-    color: #6b7280 !important;
-    background-color: transparent !important;
-}
-
-.pf-v5-c-tabs__link:hover {
-    color: #014059 !important;
-    background-color: #f9fafb !important;
-}
-
-.pf-v5-c-tabs__item.pf-m-current .pf-v5-c-tabs__link {
-    color: #014059 !important;
-    border-bottom-color: #5ec4cd !important;
-}
-
-/* Alerts */
-.pf-v5-c-alert {
-    border-radius: 6px;
-}
-
-.pf-v5-c-alert.pf-m-success {
-    background-color: #f0fdf4 !important;
-    border: 1px solid #bbf7d0 !important;
-}
-
-.pf-v5-c-alert.pf-m-danger {
-    background-color: #fef2f2 !important;
-    border: 1px solid #fecaca !important;
-}
-
-.pf-v5-c-alert.pf-m-warning {
-    background-color: #fffbeb !important;
-    border: 1px solid #fde68a !important;
-}
-
-.pf-v5-c-alert.pf-m-info {
-    background-color: #f0f9ff !important;
-    border: 1px solid #bae6fd !important;
-}
-
-/* Tables */
-.pf-v5-c-table {
-    background-color: #ffffff !important;
-}
-
-.pf-v5-c-table thead {
-    background-color: #f9fafb !important;
-}
-
-.pf-v5-c-table th {
-    color: #081a26 !important;
-    background-color: transparent !important;
-}
-
-.pf-v5-c-table td {
-    color: #081a26 !important;
-    background-color: transparent !important;
-}
-
-.pf-v5-c-table tbody tr:hover {
-    background-color: #f9fafb !important;
-}
-
-/* Dropdown menus */
-.pf-v5-c-menu {
-    background-color: #ffffff !important;
-    border: 1px solid #e5e7eb !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-}
-
-.pf-v5-c-menu__content {
-    background-color: #ffffff !important;
-}
-
-.pf-v5-c-menu__item {
-    color: #081a26 !important;
-}
-
-.pf-v5-c-menu__item:hover {
-    background-color: #f9fafb !important;
-}
-
-/* Modals */
-.pf-v5-c-modal-box {
-    background-color: #ffffff !important;
-}
-
-.pf-v5-c-modal-box__header {
-    background-color: transparent !important;
-}
-
-.pf-v5-c-modal-box__body {
-    background-color: transparent !important;
-    color: #081a26 !important;
-}
-
-/* Labels and badges */
-.pf-v5-c-label {
-    background-color: #f3f4f6 !important;
-    color: #081a26 !important;
-}
-
-/* Fix specific form elements */
-.pf-v5-c-form__helper-text {
-    color: #6b7280 !important;
-}
-
-/* Required field asterisks */
-.pf-v5-c-form__label-required {
-    color: #ef4444 !important;
-}
-
-/* Ensure all text is dark on light background */
+/* STEP 13: Use !important on everything */
 * {
     color-scheme: light !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
 }
 
-.pf-v5-c-content {
+/* STEP 14: Target PatternFly React components directly */
+[data-ouia-component-type="PF5/TextInput"] input,
+[data-ouia-component-type="PF5/FormControl"] input,
+[data-ouia-component-type="PF5/TextInputGroup"] input,
+[data-ouia-component-type*="Input"] input,
+[data-ouia-component-type*="input"] input {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
     color: #081a26 !important;
-}
-
-/* Headers */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.pf-v5-c-title {
-    color: #081a26 !important;
-}
-
-/* Description lists */
-.pf-v5-c-description-list__term {
-    color: #081a26 !important;
-}
-
-.pf-v5-c-description-list__description {
-    color: #4b5563 !important;
-}
-
-/* Empty states */
-.pf-v5-c-empty-state {
-    background-color: transparent !important;
-}
-
-.pf-v5-c-empty-state__icon {
-    color: #5ec4cd !important;
-}
-
-/* Masthead/User menu */
-.pf-v5-c-masthead {
-    background-color: #014059 !important;
-}
-
-.pf-v5-c-masthead__content {
-    background-color: transparent !important;
-}
-
-/* toolbar */
-.pf-v5-c-toolbar {
-    background-color: #014059 !important;
-}
-
-/* Override any remaining dark theme remnants */
-[class*="dark"] {
-    background-color: inherit !important;
-    color: inherit !important;
 }

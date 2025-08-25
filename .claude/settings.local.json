@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(podman-compose:*)",
+      "Bash(podman compose:*)",
+      "Bash(podman logs:*)",
+      "Bash(podman container logs:*)",
+      "Bash(podman exec keycloak-dev find:*)",
+      "Bash(podman exec keycloak-dev ls:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(podman ps:*)",
+      "WebSearch",
+      "Bash(npm run start-keycloak:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install)",
+      "Bash(bun install:*)",
+      "Bash(bun add:*)",
+      "Bash(bun run:*)"
+    ],
+    "deny": []
+  }
+}
